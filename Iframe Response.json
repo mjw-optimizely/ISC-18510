@@ -1,0 +1,16 @@
+{
+  "src": "challenge_notify",
+  "param": {
+    "messageType": "RReq",
+    "messageVersion": "2.1.0",
+    "threeDSServerTransID": "e3f672c7-5bf1-44c6-9a23-0baead0cbef7",
+    "dsTransID": "44a84aec-91c0-4597-967b-60928d208fb5",
+    "acsTransID": "ea1dd196-6932-49ad-89f5-7a85723ce29d",
+    "authenticationType": "01",
+    "authenticationValue": "t1u52StOpH0v2URGQYe5Ma+2Qms=",
+    "eci": "05",
+    "interactionCounter": "01",
+    "messageCategory": "01",
+    "transStatus": "Y"
+  }
+}
