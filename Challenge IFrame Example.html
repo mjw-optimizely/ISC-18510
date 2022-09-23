@@ -7,7 +7,7 @@
         if (e.data.src === "challenge_notify") {
           const result = document.getElementById("result");
           const p = e.data.param;
-          result.innerText = `${p.transStatus}: ${p.eci}/${p.authenticationValue}`;
+          result.innerHTML = `<ul><li>transStatus: ${p.transStatus} <li>eci: ${p.eci} <li>authenticationValue: ${p.authenticationValue} <li>threeDSServerTransID: ${p.threeDSServerTransID}</ul>`;
         }
       },
       false
@@ -15,7 +15,7 @@
 
     const action = "https://uat.acs.fraud.eu.elavonaws.com/acs/challenge/VISA";
     const creq =
-      "eyJtZXNzYWdlVHlwZSI6IkNSZXEiLCJtZXNzYWdlVmVyc2lvbiI6IjIuMS4wIiwidGhyZWVEU1NlcnZlclRyYW5zSUQiOiI0NmZiMWM4MS01NjhhLTQxM2UtOTJmZi03YmY3MTJlZTdmYmYiLCJhY3NUcmFuc0lEIjoiNWIwMGFhMDUtYmMwYi00MTAxLWI0MDItMWUyYmM3OGU2NDliIiwiY2hhbGxlbmdlV2luZG93U2l6ZSI6IjA1In0";
+      "eyJtZXNzYWdlVHlwZSI6IkNSZXEiLCJtZXNzYWdlVmVyc2lvbiI6IjIuMS4wIiwidGhyZWVEU1NlcnZlclRyYW5zSUQiOiJmMzRkNzA0Ny0yOTUyLTQ5OTAtYjk0MC02MzA3MmExM2JjMGUiLCJhY3NUcmFuc0lEIjoiODE5ODFlMDUtYWNiOC00MzRmLWE3MjAtNTllNTYwMGNhYzVmIiwiY2hhbGxlbmdlV2luZG93U2l6ZSI6IjA1In0";
     const source = `<html> <body onload='document.forms[0].submit()'> <form method=POST action='${action}'><input type=hidden name='creq' value= '${creq}'> </form> </body> </html>`;
     var threeDsiframe = document.getElementById("threeDsiframe");
     threeDsiframe.setAttribute("srcdoc", source);
@@ -27,11 +27,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Elavon Challenge Flow</title>
   </head>
   <body onload="populateIFrame()">
     <p id="result"></p>
-    <iframe frameborder="1" width="1200" height="550" id="threeDsiframe">
+    <iframe frameborder="1" width="1000" height="300" id="threeDsiframe">
     </iframe>
   </body>
 </html>
